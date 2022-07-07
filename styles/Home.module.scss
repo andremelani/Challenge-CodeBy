@@ -1,0 +1,19 @@
+.container {
+  padding: 0;
+  margin: 0;
+  .listArea {
+    padding: 20px;
+  }
+
+  .icon {
+    position: fixed;
+    z-index: 100;
+    right: 20px;
+    top: 6px;
+    color: #3b74f2;
+    background-color: white;
+    box-shadow: 0 0 6px #00000029;
+  }
+
+
+}

@@ -1,0 +1,67 @@
+.aside {
+    width: 500px;
+
+    @media (max-width:768px) {
+        width: 100vw;
+    }
+    p{
+        text-align: center;
+    }
+
+
+
+    .title {
+        width: 100%;
+        border-top: 1px solid #b9c6d7;
+        border-bottom: 1px solid #b9c6d7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .totalArea {
+        border-bottom: 1px solid #b9c6d7;
+        border-top: 1px solid #b9c6d7;
+    }
+
+    .total {
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 20px ;
+        h2 {
+            font-size: 1rem;
+        }
+    }
+
+    .free {
+        background-color: #c7ffa6 ;
+        color: #277b04 ;
+        margin: 0 10px;
+        padding: 0px 3px;
+        font-size: 0.9rem;
+        border-radius: 20px;
+
+        p {
+            padding:5px 0;
+        }
+
+    }
+
+    .buy {
+        padding: 20px;
+        button {
+            width: 100%;
+            background-color: #3b74f2;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff;
+            border: none;
+            height: 45px;
+            border-radius: 5px;
+            cursor: pointer;
+    
+        }
+    }
+
+
+}

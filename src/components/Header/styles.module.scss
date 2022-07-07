@@ -1,0 +1,11 @@
+.header {
+    background-color: white;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 6px #00000029;
+    img {
+        max-width: 120px;
+    }
+}
