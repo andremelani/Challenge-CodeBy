@@ -2,7 +2,6 @@ import Head from "next/head";
 import styles from "../styles/Home.module.scss";
 
 import { useState } from "react";
-import { useQuery } from "react-query";
 //Material
 import Drawer from "@material-ui/core/Drawer";
 import LinearProgress from "@material-ui/core/LinearProgress";
@@ -26,16 +25,13 @@ export type CartItemType = {
   amount: number;
 };
 
-const getProducts = async (): Promise<CartItemType[]> =>
-  await (await fetch("http://localhost:5000/items")).json();
 
 const Home = () => {
+
+  const { items } = require('./api/hello')
   const [cartOpen, setCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([] as CartItemType[]);
-  const { data } = useQuery<CartItemType[]>(
-    "items",
-    getProducts
-  );
+
 
   const getTotalItems = (items: CartItemType[]) =>
     items.reduce((ack: number, item) => ack + item.amount, 0);
@@ -93,13 +89,13 @@ const Home = () => {
         />
       </Drawer>
       <IconButton onClick={() => setCartOpen(true)} className={styles.icon}>
-        <Badge badgeContent={getTotalItems(cartItems)} color="error">
+        <Badge badgeContent={getTotalItems(cartItems)} color="error" overlap="rectangular">
           <AddShoppingCartIcon />
         </Badge>
       </IconButton>
       <div className={styles.listArea}>
         <Grid container spacing={3}>
-          {data?.map((item) => (
+          {items?.map((item: CartItemType) => (
             <Grid item key={item.id} xs={12} sm={4}>
               <Item item={item} handleAddToCart={handleAddToCart} />
             </Grid>
